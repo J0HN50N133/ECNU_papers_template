@@ -1,6 +1,8 @@
 %!TeX program = xelatex
 \documentclass[12pt,hyperref,a4paper,UTF8]{ctexart}
-\usepackage{BNUpapers}
+\catcode`\。=\active         %或者=13
+\newcommand{。}{．}				
+\usepackage{ecnu}
 
 %%-------------------------------正文开始---------------------------%%
 \begin{document}
@@ -38,11 +40,11 @@
 \begin{itemize}
     \item \texttt{main.tex} 主文件
     \item \texttt{reference.bib} 参考文献，使用bibtex
-    \item \texttt{BNUpapers.sty} 文档格式控制，包括一些基础的设置，如页眉、标题、姓名等
+    \item \texttt{ecnu.sty} 文档格式控制，包括一些基础的设置，如页眉、标题、姓名等
     \item \texttt{figures} 放置图片的文件夹
 \end{itemize}
 
-第一次使用时需前往\texttt{BNUpapers.sty} 对标题、姓名、学号、院系、页眉等进行设置，设置完后即可一劳永逸，封面logo亦可替换
+第一次使用时需前往\texttt{ecnu.sty} 对标题、姓名、学号、院系、页眉等进行设置，设置完后即可一劳永逸，封面logo亦可替换
 
 默认带有封面页以及目录页，页码从目录页开始
 
@@ -57,13 +59,13 @@
 \end{equation}
 
 \subsection{插入图片}
-bnu校徽如\autoref{bnu}所示，注意这里使用了\verb|~\autoref{}|命令，也就是会自动生成“图”“式”等前缀，无需手动输入。
+ecnu校徽如\autoref{ecnu}所示，注意这里使用了\verb|~\autoref{}|命令，也就是会自动生成“图”“式”等前缀，无需手动输入。
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width =.4\textwidth]{figures/bnu.pdf}
-    \caption{北京师范大学}
-    \label{bnu}
+    \includegraphics[width =.4\textwidth]{figures/ecnu_logo.png}
+    \caption{华东师范大学}
+    \label{ecnu}
 \end{figure}
 
 插入上面图片的代码：
@@ -71,14 +73,14 @@ bnu校徽如\autoref{bnu}所示，注意这里使用了\verb|~\autoref{}|命令�
 \begin{verbatim}
     \begin{figure}[!htbp]
         \centering
-        \includegraphics[width =.4\textwidth]{figures/bnu.pdf}
-        \caption{北京师范大学}
-        \label{bnu}
+        \includegraphics[width =.4\textwidth]{figures/ecnu_logo.png}
+        \caption{华东师范大学}
+        \label{ecnu}
     \end{figure}
 \end{verbatim}
 
 \subsection{插入文本框}
-本模板定义了一个圆角灰底的文本框，使用简化命令\verb|\tbox{}|即可，如果你不喜欢，可以前往 \texttt{BNUpapers.sty}对其进行修改。
+本模板定义了一个圆角灰底的文本框，使用简化命令\verb|\tbox{}|即可，如果你不喜欢，可以前往 \texttt{ecnu.sty}对其进行修改。
 
 \tbox{
     这是一个圆角灰底的文本框
@@ -89,13 +91,13 @@ bnu校徽如\autoref{bnu}所示，注意这里使用了\verb|~\autoref{}|命令�
 \begin{table}[!htbp]
     \centering
     \begin{tabular}{l  | l}
-    \hline
-        文件名 & 说明 \\
         \hline
-        \texttt{main.tex}  & 主文件 \\
-        \texttt{reference.bib} & 参考文献 \\
-        \texttt{BNUpapers.sty}  & 文档格式控制\\
-        \texttt{figures}  & 图片文件夹 \\
+        文件名                    & 说明     \\
+        \hline
+        \texttt{main.tex}      & 主文件    \\
+        \texttt{reference.bib} & 参考文献   \\
+        \texttt{ecnu.sty}      & 文档格式控制 \\
+        \texttt{figures}       & 图片文件夹  \\
         \hline
     \end{tabular}
     \caption{本模板文件组成}
@@ -130,7 +132,7 @@ bnu校徽如\autoref{bnu}所示，注意这里使用了\verb|~\autoref{}|命令�
 例如：
 
 
-   \textit{ 此处引用了文献\cite{0Isaac}。此处引用了文献\cite{2016The}}
+\textit{ 此处引用了文献\cite{0Isaac}。此处引用了文献\cite{2016The}}
 
 
 引用过的文献会自动出现在参考文献中。
@@ -138,11 +140,8 @@ bnu校徽如\autoref{bnu}所示，注意这里使用了\verb|~\autoref{}|命令�
 \section{写在最后}
 \subsection{发布地址}
 \begin{itemize}
-    \item Github: \url{https://github.com/LeyuDame/BNUpapers}
-    \item Overleaf: \url{https://www.overleaf.com/latex/templates/bnuke-cheng-lun-wen-mo-ban/bcwvxncqffkw}
+    \item Github: \url{https://github.com/J0HN50N133/ECNU_papers_template}
 \end{itemize}
-\subsection{待实现的功能}
-一般在数学中文论文中，常常用实心全角句点“.”代替句号“。”，为实现这一功能，理论上可以用\verb|xeCJK|里的\verb|fullwidth-stop|来进行字符映射，从而实现句号的转换，但在实际编译中常常因为各种原因报错，希望以后能实现这一功能。
 %%----------- 参考文献 -------------------%%
 %在reference.bib文件中填写参考文献，此处自动生成
 

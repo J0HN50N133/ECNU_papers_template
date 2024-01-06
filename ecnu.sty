@@ -1,5 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%BNU课程论文模板
+%%ECNU课程论文模板
+%%作者：J0HN50N133
+%%License：Creative Commons CC BY 4.0
+%%GitHub：https://github.com/J0HN50N133/ECNU_papers_template
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%在BNU课程论文模板的基础上修改而来
 %%作者：LeyuDame
 %%License：Creative Commons CC BY 4.0
 %%GitHub：https://github.com/LeyuDame/BNUpapers
@@ -14,11 +20,11 @@
 %%Overleaf地址：https://www.overleaf.com/latex/templates/bei-jing-da-xue-ke-cheng-lun-wen-mo-ban/yntmqcktrzfh
 
 %%更换了封面logo
-%%新建了BNUpapers宏包，将大部分与正文无关的设定也放在了sty文件里
+%%新建了ECNU宏包，将大部分与正文无关的设定也放在了sty文件里
 %%新增了bibtex的引用方式
 %%增加了一些图、定理等环境的中文引用名称
 
-\ProvidesPackage{BNUpapers}
+\ProvidesPackage{ecnu}
 
 %%页边距
 \RequirePackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
@@ -44,7 +50,7 @@
 
 
 %% 更改摘要二字的样式
-\renewcommand{\abstractname}{\textbf{\large {摘\quad 要}}} 
+\renewcommand{\abstractname}{\textbf{\large {摘\quad 要}}}
 
 %%对一些autoref的中文引用名作修改
 \def\equationautorefname{式}
@@ -72,25 +78,25 @@
 
 %%参考文献设置
 \newcommand{\reference}{
-%\nocite{*}   %打开此选项会列出bib里面的所有参考文献
-\bibliographystyle{unsrt} %规定了参考文献的格式
-\begin{center}%居中
-	\bibliography{reference} %调出LaTeX生成参考文献列表
-\end{center}
+    %\nocite{*}   %打开此选项会列出bib里面的所有参考文献
+    \bibliographystyle{unsrt} %规定了参考文献的格式
+    \begin{center}%居中
+        \bibliography{reference} %调出LaTeX生成参考文献列表
+    \end{center}
 }
 
 %%文本框设置
 \newcommand{\tbox}[1]{
-\begin{center}
-\begin{tcolorbox}[colback=gray!10,%gray background
-                  colframe=black,% black frame colour
-                  width=8cm,% Use 8cm total width,
-                  arc=1mm, auto outer arc,
-                  boxrule=0.5pt,
-                 ]
-{#1}
-\end{tcolorbox}
-\end{center}
+    \begin{center}
+        \begin{tcolorbox}[colback=gray!10,%gray background
+                colframe=black,% black frame colour
+                width=8cm,% Use 8cm total width,
+                arc=1mm, auto outer arc,
+                boxrule=0.5pt,
+            ]
+            {#1}
+        \end{tcolorbox}
+    \end{center}
 }
 
 %%页眉设置
@@ -101,25 +107,24 @@
 
 
 %%封面页设置
-{    
-    \title{ \Huge \textbf{{BNU课程论文模板}}}%标题
+{
+    \title{ \Huge \textbf{{ECNU课程论文模板}}}%标题
     \author{
-    \kaishu\Large
-        姓名\ \underline{高XX} \qquad %姓名
-        学号\ \underline{53231323} \qquad %学号
-        院系\ \underline{建筑工程学院} %院系
-        }
+        姓名：\ \underline{名字}\\ %姓名
+        学号：\ \underline{学号}\\ %学号
+        院系：\ \underline{院系} %院系
+    }
     \date{\today} % 默认为今天的日期，可以注释掉不显示日期
 }
 
 %%在这里可更改封面logo
 \newcommand{\cover}{
-%%封面校名logo，图片都在figures文件夹里
-\begin{figure}
-	\centering
-	\includegraphics[width=0.9\textwidth]{figures/bnu.pdf}
-\end{figure} 
+    %%封面校名logo，图片都在figures文件夹里
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{figures/ecnu_logo.png}
+    \end{figure}
 
-\maketitle
+    \maketitle
 }
 
